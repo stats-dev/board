@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--thymeleaf로 리스트 자료를 받아다 쓸 수 있다.-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시물 리스트 페이지</title>
+</head>
+
+<style>
+
+    .layout {
+        width : 500px;
+        margin : 0 auto;
+        margin-top : 40px;
+    }
+
+</style>
+
+
+<body>
+    <div class="layout">
+
+        <table>
+            <thead>
+            <tr>
+                <th>글번호</th>
+                <th>제목</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="board : ${list}">
+                    <td th:text="${board.id}">1</td>
+                    <!--localhost:8080/board/view?id=1~121-->
+                    <td>
+                        <!--쿼리 스트링 view?id=1 과 다르게 패스베리어블을 쓰면 역슬래쉬 뒤에 깔끔하게 숫자가 붙는다.-->
+                        <a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}"></a>
+                    </td>
+                </tr>
+            </tbody>
+
+
+        </table>
+
+    </div>
+</body>
+</html>

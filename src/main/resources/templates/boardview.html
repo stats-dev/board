@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세 페이지</title>
+</head>
+<body>
+
+<!--//th 태그로 제목, 내용을 각각 대체한다는 뜻입니다.-->
+<h1 th:text="${board.title}">제목입니다.</h1>
+<p th:text="${board.content}">내용이 들어갈 자리를 구분합니다.</p>
+<a th:href="@{/board/modify/{id}(id= ${board.id})}">수정</a>
+<!--// #은 현재 페이지를 다시 부르는 것이다.-->
+<!--/board/delete?id=1 귀찮기 때문에 글삭제라는 링크를 상세 페이지 내에 넣는다.-->
+<a th:href="@{/board/delete(id=${board.id})}">글삭제</a>
+
+</body>
+</html>
