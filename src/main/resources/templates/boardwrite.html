@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>게시물 작성폼</title>
@@ -30,7 +30,7 @@
 <body>
     <div class="layout">
 
-        <form action="/board/write" method="post">
+        <form action="/board/writepro" method="post">
             <!--        data 받는 태그 input, textarea-->
             <input name="title" type="text">
             <textarea name="content"></textarea>
