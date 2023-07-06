@@ -2,7 +2,6 @@ package com.study.board.entity;
 
 import lombok.Data;
 
-import javax.annotation.sql.DataSourceDefinition;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +16,7 @@ public class Board {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    //title 멤버변수 선언
     private String title;
 
     private String content;

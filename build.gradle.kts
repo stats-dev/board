@@ -13,15 +13,15 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
-	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.7.12")
+	implementation("org.springframework.boot:spring-boot-starter-thymeleaf:2.7.8")
+	implementation("org.springframework.boot:spring-boot-starter-web:2.7.12")
     implementation("org.projectlombok:lombok:1.18.26")
 	implementation("org.projectlombok:lombok:1.18.26")
 	implementation("org.projectlombok:lombok:1.18.26")
 	implementation("org.projectlombok:lombok:1.18.26")
-	runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	runtimeOnly("org.mariadb.jdbc:mariadb-java-client:3.1.2")
+	testImplementation("org.springframework.boot:spring-boot-starter-test:2.7.8")
 }
 
 tasks.withType<Test> {

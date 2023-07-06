@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class BoardController {
@@ -25,8 +24,10 @@ public class BoardController {
     @PostMapping("/board/writepro")
     public String boardWritePro(Board board) {
 
-//        @Data를 통해 이 getTitle이 나타나게 된다.
+//        @Data를 통해 이 getTitle이 나타나게 된다. s
 //        System.out.println(board.getTitle());
+//        System.out.println("제목 : " + title);
+//        System.out.println("내용 : " + content);
 
         //boardService 모르니 주입을 해야 한다.
         boardService.write(board);
@@ -71,8 +72,8 @@ public class BoardController {
         //기존에 있던 글 검색
         Board boardTemp = boardService.boardView(id);
         //수정시 넘어온 데이터 가져옴. 그래서 덮어씌운다.
-        boardTemp.setTitle(board.getTitle());
-        boardTemp.setContent(board.getContent());
+//        boardTemp.setTitle(board.getTitle());
+//        boardTemp.setContent(board.getContent());
 
         return "redirect:/board/list";
     }
